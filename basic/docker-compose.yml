@@ -1,0 +1,8 @@
+basic:
+    build: .
+    privileged: true
+    restart: always
+    container_name: basic
+    hostname: basic
+    volumes:
+    - /etc/localtime:/etc/localtime:ro

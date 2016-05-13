@@ -1,0 +1,13 @@
+pwn:
+    build: .
+    privileged: true
+    restart: always
+    container_name: pwn
+    hostname: pwn
+    ports:
+    - "3002:3002"
+    - "3003:3003"
+    - "81:80"
+    - "3333:22"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro

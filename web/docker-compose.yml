@@ -1,0 +1,52 @@
+ghost:
+    container_name: ghost
+    image: ghost
+    restart: always
+    ports:
+    - "2368:2368"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - $HOME/blog:/var/lib/ghost
+    environment:
+    - NODE_ENV=production
+
+mysql:
+    container_name: mysql
+    image: mysql
+    restart: always
+    ports:
+    - "3306:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+
+php-fpm:
+    container_name: php-fpm
+    build: ./php
+    restart: always
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - $HOME/www:/works/www
+    links:
+    - mysql:mysql
+
+nginx:
+    container_name: nginx
+    image: nginx
+    restart: always
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - $HOME/www:/var/www
+    - $HOME/nginx/sites-enabled:/etc/nginx/sites-enabled
+    - $HOME/nginx/nginx.conf:/etc/nginx/nginx.conf
+    links:
+    - ghost:ghost-blog
+    - php-fpm:phpfpm
+
+
+
+
+
+
