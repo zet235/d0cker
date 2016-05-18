@@ -4,7 +4,7 @@ FROM phusion/baseimage:0.9.17
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y zsh vim git gcc-multilib man tmux nginx ipython bpython wget python-pip  python2.7-dev dialog strace ltrace  && \
-    apt-get install -y libssl-dev libffi-dev  && \
+    apt-get install -y libssl-dev libffi-dev g++-4.8-multilib  && \
     #install gdb
     apt-get install -y gdb nasm  && \
     #install ncat
@@ -23,7 +23,8 @@ RUN apt-get update && \
     chsh -s /bin/zsh && \
     git clone https://github.com/zet235/dotfiles.git ~/.dotfiles && \
 
-    git clone https://github.com/zet235/ctf-tools ~/ctf-tools && \
+    #ctf tools
+    git clone --recursive https://github.com/zet235/ctf-tools.git ~/ctf-tools && \
     #clean up
     apt-get autoclean && apt-get clean && apt-get autoremove
 
