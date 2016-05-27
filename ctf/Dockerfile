@@ -3,7 +3,7 @@ FROM phusion/baseimage:0.9.17
 # fix ERROR: invoke-rc.d: policy-rc.d denied execution of start.
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
-    apt-get install -y zsh vim git gcc-multilib man tmux nginx ipython bpython wget python-pip  python2.7-dev dialog strace ltrace  && \
+    apt-get install -y zsh vim git gcc-multilib man tmux nginx ipython bpython wget python2.7 python-pip  python2.7-dev dialog strace ltrace  && \
     apt-get install -y libssl-dev libffi-dev g++-4.8-multilib  && \
     #install gdb
     apt-get install -y gdb nasm  && \
@@ -12,8 +12,8 @@ RUN apt-get update && \
 
     #pwntools
     pip install --upgrade pip && \
-    pip install pwntools && \
-    pip install --upgrade capstone && \
+    pip install git+https://github.com/Gallopsled/pwntools#egg=pwntools && \
+    #pip install --upgrade capstone && \
 
     #ssh
     rm -f /etc/service/sshd/down && \
