@@ -1,0 +1,3 @@
+[submodule "docker-mobsf"]
+	path = docker-mobsf
+	url = https://github.com/nahidupa/docker-mobsf.git
