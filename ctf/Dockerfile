@@ -24,7 +24,7 @@ RUN apt-get update && \
     git clone https://github.com/zet235/dotfiles.git ~/.dotfiles && \
 
     #ctf tools
-    git clone --recursive https://github.com/zet235/ctf-tools.git ~/ctf-tools && \
+    git clone --recursive https://github.com/zet235/ctf-tools.git ~/.ctf-tools && \
     #clean up
     apt-get autoclean && apt-get clean && apt-get autoremove
 
