@@ -12,6 +12,7 @@ RUN apt-get update && \
     #pwntools
     apt-get -y install python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential && \
     pip install --upgrade pip && \
+    pip install appdirs && \
     pip install --upgrade pwntools && \
 
     #ssh
