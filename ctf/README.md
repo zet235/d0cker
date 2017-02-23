@@ -1,6 +1,6 @@
 # pwn-box
 
-* 用 docker 打造一個打ctf的環境
+> 用 docker 打造一個打ctf的環境
 
 ##How to use
 
@@ -11,9 +11,9 @@
             -h pwn \
             --privileged \
             -v /etc/localtime:/etc/localtime:ro \
-            -p 3002:3002 -p 3003:3003 -p 81:80 -p 3333:22 \
+            -p 3002:3002 -p 3003:3003 -p 3333:22 \
             --restart=always \
-            zet235/pwn-box
+            zet235/ctf:14
 
 * 可以使用docker exec 來修改root密碼
 
