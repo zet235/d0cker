@@ -2,7 +2,7 @@
 
 > 用 docker 打造一個打ctf的環境
 
-##How to use
+## How to use
 
 
 * 運行方式
