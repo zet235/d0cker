@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.9.19
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
-    apt-get install -y zsh vim git gcc-multilib man tmux ipython bpython wget python2.7 python-pip  python2.7-dev strace ltrace  && \
+    apt-get install -y zsh vim git gcc-multilib man tmux ipython bpython wget python2.7 python-pip  python2.7-dev strace ltrace sudo zip && \
     apt-get install -y libssl-dev libffi-dev g++-4.8-multilib  && \
     #install gdb
     apt-get install -y gdb nasm  && \
