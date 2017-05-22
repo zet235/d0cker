@@ -1,6 +1,7 @@
 FROM phusion/baseimage:0.9.17
 
-RUN apt-get update && \
+RUN sed -i 's/archive.ubuntu.com/free.nchc.org.tw/g' /etc/apt/sources.list && \
+    apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y zsh vim git gcc-multilib man tmux ipython bpython wget python2.7 python-pip  python2.7-dev strace ltrace zip && \
     apt-get install -y libssl-dev libffi-dev g++-4.8-multilib  && \
