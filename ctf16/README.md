@@ -7,8 +7,8 @@
 
 * 運行方式
 
-        docker run --name pwn -d \
-            -h pwn \
+        docker run --name u16 -d \
+            -h ubuntu \
             --privileged \
             -v /etc/localtime:/etc/localtime:ro \
             -p 3002:3002 -p 3003:3003 -p 3333:22 \
