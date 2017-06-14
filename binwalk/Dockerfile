@@ -1,4 +1,5 @@
-FROM phusion/baseimage:0.9.17 #ubuntu 14
+#ubuntu 14
+FROM phusion/baseimage:0.9.17
 
 RUN sed -i 's/archive.ubuntu.com/free.nchc.org.tw/g' /etc/apt/sources.list && \
     apt-get update && \
