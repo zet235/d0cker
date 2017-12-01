@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.9.22
 
 RUN sed -i 's/archive.ubuntu.com/free.nchc.org.tw/g' /etc/apt/sources.list && \
     echo 'deb http://www.emdebian.org/debian/ squeeze main' >>  /etc/apt/sources.list && \
