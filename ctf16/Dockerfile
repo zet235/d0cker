@@ -2,10 +2,13 @@ FROM phusion/baseimage:0.9.22
 
 RUN sed -i 's/archive.ubuntu.com/free.nchc.org.tw/g' /etc/apt/sources.list && \
     echo 'deb http://www.emdebian.org/debian/ squeeze main' >>  /etc/apt/sources.list && \
+    add-apt-repository -y ppa:pi-rho/dev && \
     apt-get update && \
     apt-get dist-upgrade -y && \
     # linux env
     apt-get install -y zsh man tmux wget sudo git zip unzip tar gzip bzip2 nasm && \
+    apt-get install -y python-software-properties software-properties-common && \
+    apt-get install -y vim-gtk
     # binary lib and package
     apt-get install -y gcc-multilib emdebian-archive-keyring zlib1g-dev liblzma-dev liblzo2-dev g++-4.8-multilib libssl-dev libffi-dev build-essential && \
     apt-get install -y --force-yes binutils-mips-linux-gnu binutils-mipsel-linux-gnu binutils-arm-linux-gnueabi && \
