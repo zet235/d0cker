@@ -3,6 +3,7 @@ FROM phusion/baseimage:0.9.22
 RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list && \
     echo 'deb http://www.emdebian.org/debian/ squeeze main' >>  /etc/apt/sources.list && \
     add-apt-repository -y ppa:pi-rho/dev && \
+    rm -vf /var/lib/apt/lists/* && \
     apt-get update && \
     apt-get dist-upgrade -y && \
     # linux env
