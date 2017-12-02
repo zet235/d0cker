@@ -36,7 +36,9 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     # ssh
     rm -f /etc/service/sshd/down && \
     /etc/my_init.d/00_regen_ssh_host_keys.sh && \
-    
+    # clean
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+
     chsh -s /bin/zsh
 
 
