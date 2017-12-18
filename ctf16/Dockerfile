@@ -20,7 +20,7 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     # qemu
     apt-get install -y qemu-user-static && \
     # python
-    apt-get install -y python2.7 ipython python-pip python-dev python-lzma python-crypto && \
+    apt-get install -y python2.7 ipython python-pip python-dev python-lzma python-crypto python-capstone && \
     pip install --upgrade pip && \
     pip install nose coverage && \
     # get CTF tools
