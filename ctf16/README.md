@@ -8,12 +8,12 @@
 * 運行方式
 
 ```
-docker run --name u16 -d \
-    -h ubuntu \
+docker run --name ctf -d \
+    -h ctf \
     --privileged \
     -v /etc/localtime:/etc/localtime:ro \
     -p 3002:3002 -p 3003:3003 -p 3333:22 \
-    -e TZ=Asia/Taipei
+    -e TZ=Asia/Taipei \
     --restart=always \
     zet235/ctf
 ```
