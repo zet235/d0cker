@@ -11,7 +11,7 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     apt-get install -y python-software-properties software-properties-common && \
     apt-get install -y vim-gtk && \
     # binary lib and package
-    apt-get install -y gcc-multilib emdebian-archive-keyring zlib1g-dev liblzma-dev liblzo2-dev g++-4.8-multilib libssl-dev libffi-dev build-essential && \
+    apt-get install -y cmake gcc-multilib emdebian-archive-keyring zlib1g-dev liblzma-dev liblzo2-dev g++-4.8-multilib libssl-dev libffi-dev build-essential && \
     apt-get install -y --force-yes binutils-mips-linux-gnu binutils-mipsel-linux-gnu binutils-arm-linux-gnueabi && \
     # debug tools
     apt-get install -y strace ltrace gdb && \
