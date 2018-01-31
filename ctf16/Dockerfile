@@ -33,6 +33,8 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     apt-get install -y netcat-traditional netcat-openbsd nmap && \
     # pwntools
     pip install --upgrade pwntools && \
+    # install one_gadget
+    gem install one_gadget && \
     # ssh
     rm -f /etc/service/sshd/down && \
     /etc/my_init.d/00_regen_ssh_host_keys.sh && \
