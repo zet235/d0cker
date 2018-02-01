@@ -45,7 +45,7 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     cd ~/.dotfiles && \
     make && \
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-    vim +PluginInstall +qall && \
+    vim +PlugInstall +qall && \
 
     chsh -s /bin/zsh
 
