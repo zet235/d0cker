@@ -20,8 +20,8 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     # qemu
     apt-get install -y qemu-user-static && \
     # python
-    apt-get install -y python2.7 python-pip python-dev python-lzma python-crypto python-capstone && \
-    pip install --upgrade pip && \
+    apt-get install -y python2.7 python-pip python3-pip python-dev python-lzma python-crypto python-capstone && \
+    pip install --upgrade pip && pip3 install --upgrade pip \
     pip install ipython nose coverage && \
     # get CTF tools
     git clone --recursive https://github.com/zet235/ctf-tools.git ~/.ctf-tools && \
@@ -40,13 +40,7 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     /etc/my_init.d/00_regen_ssh_host_keys.sh && \
     # clean
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    # dotfiles
-    git clone --recursive https://github.com/zet235/dotfiles.git ~/.dotfiles && \
-    cd ~/.dotfiles && \
-    make && \
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-    vim +PlugInstall +qall && \
-
+    
     chsh -s /bin/zsh
 
 
