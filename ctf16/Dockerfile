@@ -21,7 +21,8 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
     apt-get install -y qemu-user-static && \
     # python
     apt-get install -y python2.7 python-pip python3-pip python-dev python-lzma python-crypto python-capstone && \
-    pip install --upgrade pip && pip3 install --upgrade pip \
+    curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py  && \
+    python /tmp/get-pip.py && \
     pip install ipython nose coverage && \
     # get CTF tools
     git clone --recursive https://github.com/zet235/ctf-tools.git ~/.ctf-tools && \
